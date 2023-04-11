@@ -45,7 +45,7 @@ class PlgTZ_Portfolio_PlusContentPassword extends TZ_Portfolio_PlusPlugin
             'com_tz_portfolio_plus.search');
     }
 
-    public function onUserBeforeDataValidation($form, &$data){
+    public function onUserBeforeDataValidation($form, $data){
         $app            = JFactory::getApplication();
         $name           = $form -> getName();
         $contexts       = array('com_tz_portfolio_plus.category', 'com_tz_portfolio_plus.article');
@@ -312,27 +312,33 @@ class PlgTZ_Portfolio_PlusContentPassword extends TZ_Portfolio_PlusPlugin
                     }
                 }
 
-                foreach($protectItems as $pitem){
-                    if($extension == 'module' || $extension == 'modules'){
-                        $params->set('show_' .$pitem, 0);
-                    }else{
-                        if($pitem == 'project_link') {
-                            $params -> set('project_link', '');
-                        }elseif($pitem == 'introtext') {
-                            $item -> introtext  = '';
-                            $params->set('show_' . $p_prefix . 'intro', 0);
+                if(is_string($protectItems)){
+                    $protectItems   = json_decode($protectItems, true);
+                }
 
-                            if($context == 'com_tz_portfolio_plus.portfolio' && $params -> exists('show_search_intro')) {
-                                $params->set('show_search_intro', 0);
-                            }
-                        }elseif($pitem != 'fulltext') {
-                            $params->set('show_' . $p_prefix . $pitem, 0);
+                if(is_array($protectItems) && !empty($protectItems)){
+                    foreach($protectItems as $pitem){
+                        if($extension == 'module' || $extension == 'modules'){
+                            $params->set('show_' .$pitem, 0);
+                        }else{
+                            if($pitem == 'project_link') {
+                                $params -> set('project_link', '');
+                            }elseif($pitem == 'introtext') {
+                                $item -> introtext  = '';
+                                $params->set('show_' . $p_prefix . 'intro', 0);
 
-                            if($context == 'com_tz_portfolio_plus.portfolio' && $params -> exists('show_search_'.$pitem)) {
-                                $params->set('show_search_'.$pitem, 0);
+                                if($context == 'com_tz_portfolio_plus.portfolio' && $params -> exists('show_search_intro')) {
+                                    $params->set('show_search_intro', 0);
+                                }
+                            }elseif($pitem != 'fulltext') {
+                                $params->set('show_' . $p_prefix . $pitem, 0);
+
+                                if($context == 'com_tz_portfolio_plus.portfolio' && $params -> exists('show_search_'.$pitem)) {
+                                    $params->set('show_search_'.$pitem, 0);
+                                }
                             }
+
                         }
-
                     }
                 }
 
