@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<access component="com_tz_portfolio_plus">
+	<section name="category">
+		<action name="addon.content.password.read" title="TP_ADDON_CONTENT_PASSWORD_ACTION_READ_WITHOUT_PASWORD"
+				description="TP_ADDON_CONTENT_PASSWORD_ACTION_READ_WITHOUT_PASWORD_DESC" />
+	</section>
+	<section name="article">
+		<action name="addon.content.password.read" title="TP_ADDON_CONTENT_PASSWORD_ACTION_READ_WITHOUT_PASWORD"
+				description="TP_ADDON_CONTENT_PASSWORD_ACTION_READ_WITHOUT_PASWORD_DESC" />
+	</section>
+</access>

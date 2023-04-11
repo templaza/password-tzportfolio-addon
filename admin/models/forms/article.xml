@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Parameters for article's create or edit view -->
+    <fields name="attribs">
+        <fieldset name="ado_ct_password_options"
+                  label="TP_ADDON_CONTENT_PASSWORD_OPTIONS_FIELDSET_LABEL">
+            <fields name="ado_ct_passwords">
+                    <field type="text" name="password" label="TP_ADDON_CONTENT_PASSWORD_PROTECTION_LABEL"/>
+            </fields>
+            <field type="textarea" name="ado_ct_password_msg_protection"
+                   label="TP_ADDON_CONTENT_PASSWORD_PROTECTION_MESSAGE_LABEL"/>
+        </fieldset>
+    </fields>
+    <!-- End parameters for article's create or edit view -->
+</form>

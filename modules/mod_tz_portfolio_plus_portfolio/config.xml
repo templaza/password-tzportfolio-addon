@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="params">
+        <fieldset name="basic">
+            <field type="spacer" name="spacer_ado_ct_password_name"
+                   class="alert alert-warning btn-block"
+                   label="TP_ADDON_CONTENT_PASSWORD_OPTIONS_LABEL"/>
+            <field type="list" name="ado_ct_protect_items"
+                   multiple="true"
+                   default='["introtext"]'
+                   label="TP_ADDON_CONTENT_PASSWORD_PROTECT_ITEMS">
+                <option value="created_date">JGLOBAL_CREATED_DATE</option>
+                <option value="hit">JGLOBAL_HITS</option>
+                <option value="category">JCATEGORY</option>
+                <option value="introtext">COM_TZ_PORTFOLIO_PLUS_FIELD_INTROTEXT</option>
+                <option value="author">JAUTHOR</option>
+                <option value="tag">COM_TZ_PORTFOLIO_PLUS_TAGS</option>
+            </field>
+            <field type="modal_tpaddonlist" name="ado_ct_protect_addons"
+                   excludes="content:password"
+                   multiple="true" label="TP_ADDON_CONTENT_PASSWORD_PROTECT_ADDONS"/>
+        </fieldset>        ​
+    </fields>
+</form>

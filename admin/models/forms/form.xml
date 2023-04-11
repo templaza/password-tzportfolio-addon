@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <!-- Parameters for article's create or edit view -->
+    <fields name="attribs">
+        <fieldset name="article" label="COM_TZ_PORTFOLIO_PLUS_ATTRIBS_FIELDSET_LABEL">
+            <fields name="ado_ct_passwords">
+                <field type="spacer" name="spacer_ct_password_hr" hr="true"/>
+                <field type="spacer" name="spacer_ct_password_name-2"
+                       class="alert alert-warning btn-block"
+                       label="TP_ADDON_CONTENT_PASSWORD_OPTIONS_LABEL"/>
+                <field type="text" name="password" label="TP_ADDON_CONTENT_PASSWORD_PROTECTION_LABEL"/>
+            </fields>
+        </fieldset>
+        <!--<fieldset name="article_category_listing">-->
+            <!--<field type="spacer" name="spacer_ct_password_hr" hr="true"/>-->
+            <!--<field type="spacer" name="spacer_ct_password_name"-->
+                   <!--class="alert alert-warning btn-block"-->
+                   <!--label="TP_ADDON_CONTENT_PASSWORD_OPTIONS_LABEL"/>-->
+        <!--</fieldset>-->
+    </fields>
+    <!-- End parameters for article's create or edit view -->
+</form>
